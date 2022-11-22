@@ -122,7 +122,7 @@
 
 // Задача 4 Поиск наименьшего числа в массиве--------------------
 
-// const numbers = [51, 18, 13, 24, 7, 84, 19];
+// const numbers = [51, 18, 13, 24, 1, 7, 84, 19, 2, 48];
 // let smallestNumber = numbers[0];
 
 // for (const number of numbers) {
@@ -196,7 +196,7 @@
 
 // console.log("invertedString:", invertedString);
 
-// Задача 7 Делаем slug в URL из названия статьи
+// Задача 7 Делаем slug в URL из названия статьи---------------
 
 // const title = "Top 10 benefits of React framework";
 
@@ -211,3 +211,42 @@
 
 // const slug = title.toLowerCase().split(" ").join("-");
 // console.log(slug);
+
+// Задача 8 Сумма элементов двух массивов
+
+// const array1 = [5, 10, 15, 20];
+// const array2 = [10, 20, 30];
+// let total = 0;
+
+// const numbers = array1.concat(array2);
+
+// console.log(numbers);
+
+// for (const number of numbers) {
+//   console.log(number);
+//   total += number;
+// }
+
+// console.log("Total:", total);
+
+// Задача 9 Работа с коллекцией карточек trello
+// Метод splice()
+// Удалить
+// Добавить
+// Обновить
+
+const cards = [
+  "Карточка-1",
+  "Карточка-2",
+  "Карточка-3",
+  "Карточка-4",
+  "Карточка-5",
+];
+
+// Удаление (по индексу), метод indexOf()
+
+const cardToRemove = "Карточка-3";
+
+// Добавление (по индексу)
+
+// Обновление (по индексу)
