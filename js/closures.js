@@ -44,22 +44,40 @@
 // makeDish("Persik", "супик");
 // makeDish("Persik", "молочко");
 
-const makeSheff = function (name) {
-  const makeDish = function (dish) {
-    console.log(`${name} готовит ${dish}`);
-  };
+// const makeSheff = function (name) {
+//   const makeDish = function (dish) {
+//     console.log(`${name} готовит ${dish}`);
+//   };
 
-  return makeDish;
-};
+//   return makeDish;
+// };
 
-const muha = makeSheff("Muha");
+// const muha = makeSheff("Muha");
 
-muha("пирожок");
-muha("омлет");
-muha("чай");
+// muha("пирожок");
+// muha("омлет");
+// muha("чай");
 
-const persik = makeSheff("Persik");
+// const persik = makeSheff("Persik");
 
-persik("котлетки");
-persik("супик");
-persik("молочко");
+// persik("котлетки");
+// persik("супик");
+// persik("молочко");
+
+// -----------------------------------------------------------
+
+// let a = 3;
+// function addTwo(x) {
+//   let ret = x + 2;
+//   return ret;
+// }
+// let b = addTwo(a);
+// console.log(b);
+
+let val1 = 2;
+function multiplyThis(n) {
+  let ret = n * val1;
+  return ret;
+}
+let multiplied = multiplyThis(6);
+console.log("example of scope:", multiplied);
