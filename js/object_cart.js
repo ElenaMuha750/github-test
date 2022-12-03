@@ -207,4 +207,193 @@ const calcTotalPrice = function (stones, stoneName) {
  * `operation` - строка c одной из 4 математических операций: +,-,*,/
  */
 
-function compare(firstNumber, secondNumber, operation, result) {}
+function compare(firstNumber, secondNumber, operation, result) {
+  const num1 = Number(firstNumber);
+  const num2 = Number(secondNumber);
+  const res = Number(result);
+
+  if (isNaN(num1) || isNaN(num2) || isNaN(res)) return "Invalid params";
+
+  const operationDic = {
+    "+": function sum(a, b) {
+      return a + b;
+    },
+    "-": function minus(a, b) {
+      return a - b;
+    },
+    "*": function multi(a, b) {
+      return a * b;
+    },
+    "/": function divide(a, b) {
+      return a / b;
+    },
+  };
+
+  if (!operationDic[operation]) {
+    return "Invalid operation";
+  }
+
+  const operationResult = operationDic[operation](num1, num2);
+
+  return operationResult === res;
+
+  // return operationResult === res;
+
+  // console.log("operation", operation);
+  // console.log("operationDic[operation]", operationDic[operation]);
+  // console.log(operationDic[operation](num1, num2));
+
+  // switch (operation) {
+  //   case "+":
+  //     return num1 + num2 === res;
+  //   case "-":
+  //     return num1 - num2 === res;
+  //   case "*":
+  //     return num1 * num2 === res;
+  //   case "/":
+  //     return num1 / num2 === res;
+  //   default:
+  //     return false;
+  // }
+}
+
+// console.log(compare("1", "2", "+", "3")); // true
+// console.log(compare("2", "2", "*", "3")); // false
+// console.log(compare("4", "2", "-", "3")); // false
+// console.log(compare("8", "2", "/", "4")); // true
+
+// ----------------------------------------------------------
+
+const friends = [
+  { name: "Mango", online: false },
+  { name: "Kiwi", online: true },
+  { name: "Poly", online: true },
+  { name: "Ajax", online: false },
+];
+
+// console.table(friends);
+
+// 1 Ищем друга по имени
+
+// const findFriendByName = function (allFriends, friendName) {
+//   for (const friend of allFriends) {
+//     // console.log(friend);
+//     // console.log(friend.name);
+
+//     if (friend.name === friendName) {
+//       return "НАШЛИ!!";
+//     }
+//   }
+
+//   return "НЕ НАШЛИ :(";
+// };
+
+// console.log(findFriendByName(friends, "Poly"));
+// console.log(findFriendByName(friends, "Muha"));
+
+// 2 Получаем имена всех друзей
+
+// const getAllNames = function (allFriends) {
+//   const names = [];
+
+//   for (const friend of allFriends) {
+//     // console.log(friend.name);
+//     names.push(friend.name);
+//   }
+
+//   return names;
+// };
+
+// console.log(getAllNames(friends));
+
+// 3 Получаем имена друзей, которые ОНЛАЙН
+
+const getOnlineFriends = function (allFriends) {
+  const onlineFriends = [];
+
+  for (const friend of allFriends) {
+    console.log(friend);
+    console.log(friend.online);
+
+    if (friend.online) {
+      onlineFriends.push(friend);
+    }
+  }
+
+  return onlineFriends;
+};
+//
+// console.log(getOnlineFriends(friends));
+
+// 3 Получаем имена друзей, которые НЕ ОНЛАЙН
+
+const getOfflineFriends = function (allFriends) {
+  const offlineFriends = [];
+
+  for (const friend of allFriends) {
+    if (!friend.online) {
+      offlineFriends.push(friend);
+    }
+  }
+
+  return offlineFriends;
+};
+
+// console.log(getOfflineFriends(friends));
+
+//4 Создать 2 массива ОНЛАЙН и ОФЛАЙН
+
+const getFriendsByOnlineStatus = function (allFriends) {
+  const friendsByStatus = {
+    online: [],
+    offline: [],
+  };
+
+  for (const friend of allFriends) {
+    if (friend.online) {
+      friendsByStatus.online.push(friend);
+      continue;
+    }
+
+    friendsByStatus.offline.push(friend);
+  }
+
+  return friendsByStatus;
+};
+
+// console.log(getFriendsByOnlineStatus(friends));
+
+// -----------------------------------------------------------
+
+// Количество свойств в объекте
+
+const x = {
+  a: 1,
+  b: 2,
+  c: 50,
+  d: 100,
+};
+
+// console.log(Object.keys(x).length);
+
+// -----------------------------------------------------------
+
+/**
+ * Example 5 - Комплексные задачи
+ * Напиши скрипт управления личным кабинетом интернет банка.
+ * Есть объект account в котором необходимо реализовать методы для работы с балансом и историей транзакций.
+ */
+
+/*
+ * Типов транзацкий всего два.
+ * Можно положить либо снять деньги со счета.
+ */
+
+const Transaction = {
+  DEPOSIT: "deposit",
+  WITHDRAW: "withdraw",
+};
+
+/*
+ * Каждая транзакция это объект со свойствами: id, type и amount
+ */
